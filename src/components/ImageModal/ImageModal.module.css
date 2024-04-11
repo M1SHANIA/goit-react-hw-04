@@ -1,0 +1,23 @@
+.closeButton {
+  position: absolute;
+  z-index: 1000;
+  background: none;
+  border: none;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  background-color: transparent;
+  font-size: 40px;
+  color: blue;
+}
+.imageModal {
+  width: 850px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.overlay {
+  inset: 0;
+  position: fixed;
+  background-color: rgba(129, 129, 129, 0.455);
+}
