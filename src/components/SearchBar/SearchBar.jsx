@@ -10,15 +10,16 @@ export default function SearchBar({ handleQuery }) {
   const notify = () => toast("Please enter the search criteria");
 
   const handleChange = (event) => {
-    setSearchCriteria(event.target.value.trim());
+    setSearchCriteria(event.target.value);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!searchCriteria) {
+    if (!searchCriteria.trim()) {
+      // Added .trim() here to validate input
       notify();
       return;
     } else {
-      handleQuery(searchCriteria);
+      handleQuery(searchCriteria.trim());
       setSearchCriteria("");
       event.target.reset();
     }

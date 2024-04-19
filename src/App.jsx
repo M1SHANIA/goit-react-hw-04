@@ -4,7 +4,7 @@ import axios from "axios";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import Loader from "./components/Loader/Loader";
-import LoadMoreButton from "./components/LoadMoreButton/LoadMoreButton";
+import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import SearchBar from "./components/SearchBar/SearchBar";
 import ImageModal from "./components/ImageModal/ImageModal";
 
@@ -72,9 +72,7 @@ function App() {
         <ImageGallery gallery={photosToShow} handleModal={openModal} />
       )}
 
-      {page < total_pages && (
-        <LoadMoreButton handleLoadMore={handleSearchPage} />
-      )}
+      {page < total_pages && <LoadMoreBtn handleLoadMore={handleSearchPage} />}
       {isLoading && <Loader />}
       {error && <ErrorMessage />}
       {modalIsOpen && (
